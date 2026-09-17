@@ -55,23 +55,19 @@ O objetivo deste repositório é acompanhar minha evolução no desenvolvimento 
 ## 📂 Organização do repositório
 
 ```text
-HTML-CSS/
+📁 Modulo 1
 │
-├── exercicios/
-│   ├── exercicio-01/
-│   ├── exercicio-02/
+├── 📁 desafios
+│   ├── index.html        ← menu dos desafios
+│   ├── desafio01.html
+│   ├── desafio02.html
 │   └── ...
 │
-├── desafios/
-│   ├── desafio-01/
-│   ├── desafio-02/
-│   └── ...
-│
-├── projetos/
-│   ├── projeto-01/
-│   └── ...
-│
-└── README.md
+└── 📁 exercícios
+    ├── index.html        ← menu dos exercícios
+    ├── exercicio01.html
+    ├── exercicio02.html
+    └── ...
 ```
 
 > A organização das pastas pode mudar conforme novos exercícios e projetos forem adicionados.
