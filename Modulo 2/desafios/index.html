@@ -3,104 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <title>Desafios</title>
+    <link rel="shortcut icon" href="icone-py.png" type="image/x-icon">
+    <title>Desafio do Claude</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #E8E6C2;
+            background-image: url(espelho.avif);
         }
 
         header {
-            background-image: linear-gradient(to top, #023E1C ,#299E5C);
-            padding: 15px;
+            background-color: #F7C600;
+            color: white;
+            padding: 20px;
+            text-align: center;
             width: 100%;
-            h1 {
-                color: white;
-                text-align: center;
-            }
-
-            p {
-                color: white;
-                text-align: center;
-                font-size: 20px;
-            }
-
-            nav {
-                a {
-                    color: white;
-                }
-            }
-        
+            
         }
 
         main {
             background-color: white;
-            width: 85%;
-            padding: 10px;
+            padding: 20px;
+            text-align: center;
             margin: auto;
-            color: black;
-            logo {
-                background-color: #8AE3AE;
-                width: 100%;
-                padding: 4px;
-            }
+            width: 50%;
+            border-radius: 20px;
+        }
 
-            a {
-                background-color: #8BE4B0;
-            }
-
-            img {
-                width: 100%;
-                height: auto;
-            }
-        } 
-        
         footer {
-            iframe {
-                margin: auto;
-                width: 85%;
-            }
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>CURIOSIDADES DE TECNOLOGIA</h1>
-        <p>Tudo aquilo que você sempre quis saber sobre o mundo Tech, em um <br> único lugar</p>
-        <nav>
-            <a href="#"">Home</a>
-            <a href="#"">Notícias</a>
-            <a href="#"">Curiosidades</a>
-            <a href="#"">Fale Conosco</a>
-        </nav>
+        <h1>Cadastro de usuário</h1>
+        <p>Olá, usuário! Este é o desafio do meu professor Claude. Para cadastrar, basta preencher os campos e clicar em "Enviar".</p>
     </header>
 
     <main>
-        <h1>História do Mascote do Android</h1>
-        <p>Provavelmente você sabe que o sistema operacional Android, mantido pelo Google é um dos mais utilizados para dispositivos móveis em todo o mundo. Mas tavez você não saiba que o seu simpático mascote tem um nome e uma história muito curiosa? Pois acompanhe esse artigo para aprender muita coisa sobre esse robozinho.</p>
-        <logo>A primeira versão</logo>
-
-        <p>A primeira tentativa de criar um mascote surgiu em 2007 e veio de um desenvolvedor chamado <a href="#">Dan Morrill</a>. Ele conta que abriu o <a href="#">Inkscape</a> (software livre para vetorização de imagens) e criou sua própria versão de robô. O objetivo era apenas personificar o sistema apenas para a a sua equipe, não existia nenhuma solicitação da empresa para a criação de um mascote.</p>
-        
-        <img src="imagens/dan-droids.png" alt="Dan Droids">
-
-        <p>Essa primeira versão bizarra até foi batizada em homenagem ao seu criador: seriam os <a href="#">Dandroids</a>.</p>
-        <logo>Surge um novo mascote</logo>
-
-        <p>A ideia de ter um mascote foi amadurecendo e a missão foi passada para uma profissional da área. A ilustradora Russa <a href="#">Irina Blok</a>, também funcionária do Google, ficou com a missão de representar o pequeno robô de uma maneira mais agradável.</p>
-        
-        <img src="imagens/irina-blok.jpg" alt="irina blok">
-
-        <p>A ideia principal da Irina era representar tudo graficamente com poucos traços e de forma mais chapada. O desenho também deveria gerar identificação rápida com quem o olha. Surgiu então o <a href="#">Bugdroid</a>, o novo mascote do Android.</p>
-
-        <img src="imagens/bugdroid.png" alt="android">
-
-        <p>A principal inspiração para os traços do novo Bugdroid veio daqueles bonequinhos que ilustram portas de banheiro para indicar o gênero de cada porta. Conta a lenda que a artista estava criando em sua mesa no escritório do Google e olhou para o lado dos banheiros e a identificação foi imediata: simples, limpo, objetivo.</p>
+        <form method="post"></form>
+            <p><label for="id_nome">Nome completo:</label> <input type="text" name="nome" id="id_nome" required></p>
+            <p><label for="id_email">Email:</label> <input type="email" name="email" id="id_email" required></p>
+            <p><label for="id_senha">Password:</label> <input type="password" name="senha" id="id_senha" required></p>
+            <p><label for="id_idade">Idade:</label> <input type="number" name="idade" id="id_idade"></p>
+            <p><label for="id_m">Masculino:</label> <input type="radio" name="genero" id="id_m" value="Masculino"> 
+                <label for="id_f">Feminino:</label> <input type="radio" name="genero" id="id_f" value="Feminino">
+            </p>
+            <p><label for="id_pais">País:</label> <select name="pais" id="id_pais">
+                <option value="Brasil">Brasil</option>
+                <option value="Canadá">Canadá</option>
+                <option value="EUA">EUA</option>
+                <option value="Espanha">Espanha</option>
+                <option value="França">França</option>
+                <option value="Italia">Italia</option>
+                <option value="Japão">Japão</option>
+                <option value="México">México</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Reino Unido">Reino Unido</option>
+            </select></p>
+            <p><label for="id_termos">Aceito os termos:</label> <input type="checkbox" name="termos" id="id_termos"></p>
+            <p><a href="later.html"><input type="submit" value="Enviar"></a></p>
+        </form>
     </main>
 
     <footer>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/xS2D9x8odoE?si=TPLAYbEMVMM3YexM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h2>Termos de uso e política de privacidade</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero similique mollitia quaerat? Odio amet pariatur laudantium libero eos praesentium, assumenda atque, voluptatem harum consectetur id, dolores incidunt quas ratione mollitia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sit doloremque dicta. Architecto sunt laboriosam nam, ullam hic assumenda accusantium consequuntur temporibus! Obcaecati delectus deleniti hic fugit esse consectetur totam?</p>
     </footer>
 </body>
 </html>
