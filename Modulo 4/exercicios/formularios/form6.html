@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário 6</title>
+</head>
+<body>
+    <h1>Teste de formulário</h1>
+    <form action="python.py" method="post">
+        <label for="ipais">País:</label>
+        <select name="pais" id="ipais">
+            <option value="Brasil">Brasil</option>
+            <option value="Canadá">Canadá</option>
+            <option value="EUA">EUA</option>
+            <option value="Espanha">Espanha</option>
+        </select>
+    </form>
+    <p>
+        <label for="iprof">Profissão:</label>
+        <input type="text" name="prof" id="iprof" list="lstprof">
+        <datalist id="lstprof">
+            <option value="Administrador">Administrador</option>
+            <option value="Analista">Analista</option>
+            <option value="Consultor">Consultor</option>
+            <option value="Professor">Professor</option>
+            <option value="Tecnólogo">Tecnólogo</option>
+        </datalist>
+    </p>
+    <p>
+        <label for="imsg">Mensagem</label> <br>
+        <textarea name="mesagem" id="imsg" cols="30" rows="10"></textarea>
+    </p>
+
+
+    <p>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+    </p>
+   
+</body>
+</html>
