@@ -1,0 +1,746 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meus Estudos | HTML & CSS</title>
+
+    <style>
+        /* ==============================
+           CONFIGURAÇÕES GERAIS
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+            background: #081525;
+            border-bottom: 1px solid #17283d;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            color: #168cff;
+            font-size: 28px;
+        }
+
+        .logo span {
+            color: #168cff;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #c7d2df;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #168cff;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 40%, #0b3155 0%, transparent 30%),
+                #07111f;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 22px;
+            border-radius: 30px;
+            background: #0c2947;
+            border: 1px solid #124a7e;
+            color: #64b5ff;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #168cff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #aebdce;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #168cff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0876df;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #2679b9;
+            color: #dcecff;
+        }
+
+        .btn-secondary:hover {
+            background: #0d2944;
+            transform: translateY(-3px);
+        }
+
+
+        /* ==============================
+           MÓDULOS
+        ============================== */
+
+        .modules {
+            padding: 90px 0;
+            border-top: 1px solid #17283d;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #9eafc2;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #0a192a;
+            border: 1px solid #1a3652;
+            border-radius: 14px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #168cff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .card h4 {
+            color: #168cff;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #9eafc2;
+            margin-bottom: 25px;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-btn {
+            flex: 1;
+            padding: 11px;
+            text-align: center;
+            border-radius: 7px;
+            background: #168cff;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .card-btn:hover {
+            background: #0876df;
+        }
+
+        .card-btn.outline {
+            background: transparent;
+            border: 1px solid #31516f;
+        }
+
+        .card-btn.outline:hover {
+            background: #102b45;
+        }
+
+
+        /* ==============================
+           TECNOLOGIAS
+        ============================== */
+
+        .technologies {
+            padding: 80px 0;
+            background: #081525;
+            border-top: 1px solid #17283d;
+        }
+
+        .tech-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .tech {
+            padding: 14px 24px;
+            border: 1px solid #28445f;
+            border-radius: 8px;
+            background: #0b1b2d;
+            color: #d7e5f4;
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           SOBRE
+        ============================== */
+
+        .about {
+            padding: 90px 0;
+        }
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-box h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            color: #aebdce;
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            margin-top: 30px;
+            padding: 20px;
+            border-left: 3px solid #168cff;
+            background: #0a192a;
+            font-style: italic;
+            color: #c9d9e9;
+        }
+
+
+        /* ==============================
+           REDES SOCIAIS
+        ============================== */
+
+        .social {
+            text-align: center;
+            padding: 60px 0;
+            background: #081525;
+            border-top: 1px solid #17283d;
+        }
+
+        .social h2 {
+            margin-bottom: 15px;
+        }
+
+        .instagram {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: 1px solid #b45cff;
+            border-radius: 8px;
+            color: #d8b4ff;
+            transition: 0.3s;
+        }
+
+        .instagram:hover {
+            background: #25133b;
+            transform: translateY(-3px);
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            padding: 25px 0;
+            text-align: center;
+            border-top: 1px solid #17283d;
+            color: #788da3;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #dbe8f5;
+        }
+
+
+        /* ==============================
+           RESPONSIVIDADE
+        ============================== */
+
+        @media (max-width: 850px) {
+
+            .navbar {
+                flex-direction: column;
+                padding: 18px 0;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 500px;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2,
+            .about-box h2 {
+                font-size: 30px;
+            }
+
+            .card-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         CABEÇALHO
+    ============================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <a href="#" class="logo">
+                <div class="logo-icon">&lt;/&gt;</div>
+                <div>
+                    Meus Estudos
+                    <span>| HTML & CSS</span>
+                </div>
+            </a>
+
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#modulos">Módulos</a>
+                <a href="#tecnologias">Tecnologias</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         INÍCIO
+    ============================== -->
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="tag">
+                        👋 Bem-vindo ao meu repositório!
+                    </div>
+
+                    <h1>
+                        Meus Estudos<br>
+                        <span>HTML & CSS</span>
+                    </h1>
+
+                    <p>
+                        Este é o meu espaço de estudos, exercícios,
+                        desafios e projetos desenvolvidos durante
+                        minha jornada de aprendizagem em desenvolvimento web.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a href="#modulos" class="btn btn-primary">
+                            📚 Explorar Módulos →
+                        </a>
+
+                        <a href="https://github.com/" target="_blank"
+                           class="btn btn-secondary">
+                            💻 Ver no GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-image">
+
+                    <img src="img/html-css.png" alt="">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             MÓDULOS
+        ============================== -->
+
+        <section class="modules" id="modulos">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>📚 Meus Módulos</h2>
+
+                    <p>
+                        Escolha um módulo para explorar meus exercícios e desafios.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <!-- MÓDULO 1 -->
+
+                    <article class="card">
+
+                        <div class="card-icon">📘</div>
+
+                        <h3>Módulo 1</h3>
+
+                        <h4>Fundamentos do HTML e CSS</h4>
+
+                        <p>
+                            Aqui estão meus primeiros estudos,
+                            exercícios e desafios relacionados aos
+                            fundamentos do desenvolvimento web.
+                        </p>
+
+                        <div class="card-buttons">
+
+                            <a href="Modulo%201/exerc%C3%ADcios/"
+                               class="card-btn">
+                                Exercícios
+                            </a>
+
+                            <a href="Modulo%201/desafios/"
+                               class="card-btn outline">
+                                Desafios
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MÓDULO 2 -->
+
+                    <article class="card">
+
+                        <div class="card-icon">📗</div>
+
+                        <h3>Módulo 2</h3>
+
+                        <h4>Aprofundando o conhecimento</h4>
+
+                        <p>
+                            Exercícios e desafios desenvolvidos para
+                            praticar e aprofundar os conhecimentos
+                            adquiridos durante os estudos.
+                        </p>
+
+                        <div class="card-buttons">
+
+                            <a href="Modulo%202/exerc%C3%ADcios/"
+                               class="card-btn">
+                                Exercícios
+                            </a>
+
+                            <a href="Modulo%202/desafios/"
+                               class="card-btn outline">
+                                Desafios
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             TECNOLOGIAS
+        ============================== -->
+
+        <section class="technologies" id="tecnologias">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>🛠️ Tecnologias</h2>
+
+                    <p>
+                        Tecnologias que fazem parte dos meus estudos.
+                    </p>
+
+                </div>
+
+                <div class="tech-list">
+
+                    <div class="tech">🌐 HTML5</div>
+                    <div class="tech">🎨 CSS3</div>
+                    <div class="tech">🐍 Python</div>
+                    <div class="tech">🧩 Python OOP</div>
+                    <div class="tech">🗄️ SQL</div>
+                    <div class="tech">🚀 Django</div>
+                    <div class="tech">🔧 Git</div>
+                    <div class="tech">🐙 GitHub</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             SOBRE
+        ============================== -->
+
+        <section class="about" id="sobre">
+
+            <div class="container">
+
+                <div class="about-box">
+
+                    <h2>👨‍💻 Sobre mim</h2>
+
+                    <p>
+                        Olá! Sou <strong>Luis Mário</strong>, estudante de
+                        programação e desenvolvedor em formação.
+                    </p>
+
+                    <p>
+                        Atualmente estudo Python, Programação Orientada a
+                        Objetos, SQL e Django, enquanto continuo praticando
+                        desenvolvimento web com HTML e CSS.
+                    </p>
+
+                    <p>
+                        Este repositório representa parte da minha evolução:
+                        cada exercício, desafio e projeto é uma oportunidade
+                        para aprender algo novo.
+                    </p>
+
+                    <div class="quote">
+                        "Não quero apenas aprender a escrever código.
+                        Quero entender a lógica por trás dele."
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             REDES SOCIAIS
+        ============================== -->
+
+        <section class="social">
+
+            <div class="container">
+
+                <h2>🌎 Vamos nos conectar?</h2>
+
+                <p>
+                    Acompanhe minha jornada e meus projetos.
+                </p>
+
+                <a
+                    href="https://www.instagram.com/luis_silva_ao/"
+                    target="_blank"
+                    class="instagram">
+
+                    📸 Instagram — @luis_silva_ao
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         RODAPÉ
+    ============================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                Feito com ❤️ por <strong>Luis Mário</strong>
+            </p>
+
+            <p>
+                © 2026 — Meus Estudos HTML & CSS
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```
