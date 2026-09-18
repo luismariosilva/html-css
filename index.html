@@ -105,6 +105,31 @@
                 #07111f;
         }
 
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 15px;
+        }
+
         .hero-content {
             max-width: 800px;
         }
@@ -381,6 +406,11 @@
         ============================== */
 
         @media (max-width: 850px) {
+
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
 
             .navbar {
                 flex-direction: column;
